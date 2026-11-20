@@ -10,7 +10,7 @@
 
 📊 Dive into 10+ years of global retail enterprise data! Building upon a star-schema warehouse, this portfolio project transforms **100,000+ transaction lines** across **49,487 customers**, **3 continents**, and **8 product categories** into actionable executive business intelligence.
 
-Using **PostgreSQL 16**, **DBeaver**, and a unified **white-theme editorial visualization suite** (authored in Python with Matplotlib), this project investigates customer lifetime value (LTV) percentiles, cohort decay dynamics, 5×5 behavioral RFM matrices, multi-year product pivots, statistical skewness, and 10-year macro growth trajectories.
+Using **PostgreSQL 18**, **DBeaver**, and a unified **white-theme editorial visualization suite**, this project investigates customer lifetime value (LTV) percentiles, cohort decay dynamics, 5×5 behavioral RFM matrices, multi-year product pivots, statistical skewness, and 10-year macro growth trajectories.
 
 🔍 SQL queries? Explore all 8 self-contained analytical scripts directly in this repository:
 1. [1_top_paying_customers.sql](1_top_paying_customers.sql)
