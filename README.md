@@ -174,7 +174,7 @@ Database creation, table definition, and data loading scripts are organized in t
 # The Analysis
 
 ### 1. Top Paying Customers by Lifetime Net Revenue
-📁 SQL File: [1_top_paying_customers.sql](1_top_paying_customers.sql) | 📊 Visualizer: [visualizations/1_top_paying_customers.py](visualizations/1_top_paying_customers.py)
+📁 SQL File: [1_top_paying_customers.sql](1_top_paying_customers.sql)
 
 To evaluate high-value accounts across global markets, this query standardizes customer demographics using text cleaning functions (`INITCAP`, `TRIM`, `CONCAT`), handles missing attributes with `COALESCE`, and aggregates lifetime net revenue, total order volume, and Average Order Value (AOV).
 
@@ -243,7 +243,7 @@ LIMIT 10;
 ---
 
 ### 2. Customer Segmentation & Pareto Distribution
-📁 SQL File: [2_customer_segmentation_pareto.sql](2_customer_segmentation_pareto.sql) | 📊 Visualizer: [visualizations/2_customer_segmentation_pareto.py](visualizations/2_customer_segmentation_pareto.py)
+📁 SQL File: [2_customer_segmentation_pareto.sql](2_customer_segmentation_pareto.sql)
 
 To evaluate customer spending concentration without arbitrary cutoff bias, this query computes exact 25th and 75th percentiles of customer Lifetime Value (LTV) using `PERCENTILE_CONT()`, establishing objective **Low-Value (Bottom 25%)**, **Mid-Value (Middle 50%)**, and **High-Value (Top 25%)** tiers.
 
@@ -306,7 +306,7 @@ ORDER BY
 ---
 
 ### 3. 5×5 Behavioral RFM Customer Personas
-📁 SQL File: [3_rfm_customer_personas.sql](3_rfm_customer_personas.sql) | 📊 Visualizer: [visualizations/3_rfm_customer_personas.py](visualizations/3_rfm_customer_personas.py)
+📁 SQL File: [3_rfm_customer_personas.sql](3_rfm_customer_personas.sql)
 
 A 5×5 behavioral RFM grid maps customers across a 1–5 scale for Recency (how recently they bought) and Frequency (how often they buy), while using Monetary value (how much they spend) as a tie-breaker, overlay, or third dimension.
 
@@ -375,7 +375,7 @@ ORDER BY
 ---
 
 ### 4. Cohort Evolution & Tenure Bias Normalization
-📁 SQL File: [4_cohort_tenure_normalization.sql](4_cohort_tenure_normalization.sql) | 📊 Visualizer: [visualizations/4_cohort_tenure_normalization.py](visualizations/4_cohort_tenure_normalization.py)
+📁 SQL File: [4_cohort_tenure_normalization.sql](4_cohort_tenure_normalization.sql) 
 
 Evaluating raw customer lifetime spend across historical cohorts creates a severe mathematical illusion: older cohorts appear to have significantly higher customer quality simply because they have had 5+ years of accumulation. To eliminate tenure bias, this query normalizes observation windows to each customer's **first 3 months** (`orderdate <= first_purchase_date + INTERVAL '3 months'`).
 
@@ -439,7 +439,7 @@ ORDER BY
 ---
 
 ### 5. Lifetime Revenue Concentration: Day-0 Power-Law Decay
-📁 SQL File: [5_revenue_power_law_decay.sql](5_revenue_power_law_decay.sql) | 📊 Visualizer: [visualizations/5_revenue_power_law_decay.py](visualizations/5_revenue_power_law_decay.py)
+📁 SQL File: [5_revenue_power_law_decay.sql](5_revenue_power_law_decay.sql) 
 
 To map the exact velocity at which customer revenue accumulates across the relationship lifecycle, this query measures days elapsed from acquisition date (`orderdate - first_order_date`) and bins lifetime enterprise revenue across distinct tenure milestones.
 
@@ -511,7 +511,7 @@ ORDER BY
 ---
 
 ### 6. Product Category Revenue Rankings & Profit Margins
-📁 SQL File: [6_product_category_performance.sql](6_product_category_performance.sql) | 📊 Visualizer: [visualizations/6_product_category_performance.py](visualizations/6_product_category_performance.py)
+📁 SQL File: [6_product_category_performance.sql](6_product_category_performance.sql) 
 
 This query ranks Contoso's 8 merchandising categories by lifetime gross sales and computes exact gross profit margins (`(netprice - unitcost) / netprice`) to separate top-line revenue drivers from true bottom-line margin contributors.
 
@@ -557,7 +557,7 @@ ORDER BY
 ---
 
 ### 7. Statistical Order Value Skewness: Mean vs. Continuous Median
-📁 SQL File: [7_order_value_skewness.sql](7_order_value_skewness.sql) | 📊 Visualizer: [visualizations/7_order_value_skewness.py](visualizations/7_order_value_skewness.py)
+📁 SQL File: [7_order_value_skewness.sql](7_order_value_skewness.sql) 
 
 Relying on arithmetic averages (`AVG`) can misinform pricing and logistics strategies when data is heavily skewed. This query compares parametric mean spend against the continuous 50th percentile (`PERCENTILE_CONT(0.5)`) to quantify distributional distortion across product categories.
 
@@ -606,7 +606,7 @@ ORDER BY
 ---
 
 ### 8. Annual Macro Trends & 10-Year Enterprise Trajectory
-📁 SQL File: [8_annual_macro_trends.sql](8_annual_macro_trends.sql) | 📊 Visualizer: [visualizations/8_annual_macro_trends.py](visualizations/8_annual_macro_trends.py)
+📁 SQL File: [8_annual_macro_trends.sql](8_annual_macro_trends.sql) 
 
 This script audits the full 10-year enterprise lifecycle (2015–2024), utilizing the `LAG()` analytical window function to track annual net revenue, active customer count, order volume, and year-over-year revenue expansion.
 
